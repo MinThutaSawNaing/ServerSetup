@@ -1,0 +1,18 @@
+[Unit]
+Description=Localhost.run Secure Tunnel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+# Replace 'youruser' with your actual Linux username
+User=youruser
+WorkingDirectory=/home/youruser
+ExecStart=/bin/bash /home/youruser/run_tunnel.sh
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=ssh-tunnel
+
+[Install]
+WantedBy=multi-user.target
