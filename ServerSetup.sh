@@ -28,6 +28,8 @@ echo \
 apt update
 apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+sudo apt install npm -y
+
 echo "--- Configuring 2GB Permanent Swap ---"
 # Create 2GB swap file
 fallocate -l 2G /swapfile || dd if=/dev/zero of=/swapfile bs=1M count=2048
